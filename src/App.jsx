@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import './App.css'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import TodoApp from './components/TodoApp'
 
 function App() {
   const products = [
@@ -18,20 +21,16 @@ function App() {
     {
       id: 3,
       name: 'Product 3',
-      price: 5.99,
+      price: 53.99,
       image: 'https://via.placeholder.com/150',
     },
   ];
 
   return (
-    <div className="flex flex-col gap-4 p-6 items-center justify-center min-h-screen bg-gray-100">
-      {products.map((product) => (
-        <div key={product.id} className="bg-white p-4 rounded shadow-md w-64">
-          <img src={product.image} alt={product.name} className="w-full h-40 object-cover rounded" />
-          <h2 className="text-lg font-semibold mt-2">{product.name}</h2>
-          <p className="text-gray-600">${product.price.toFixed(2)}</p>
-        </div>
-      ))}
+    <div className="p-8 bg-red-100 min-h-screen">
+      <Header />
+      <TodoApp />
+      <Footer />
     </div>
   )
 }
